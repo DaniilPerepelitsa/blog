@@ -6,7 +6,7 @@ namespace App\Http\Services;
 use App\Models\Post;
 use Illuminate\Support\Arr;
 use Elasticsearch\Client;
-use Symfony\Component\Process\Process;
+use Illuminate\Support\Collection;
 
 class ElasticSearch
 {
@@ -32,7 +32,7 @@ class ElasticSearch
                 'size' => 1000,
                 'query' => [
                     'multi_match' => [
-                        'fields' => ['title'],
+                        'fields' => ['title', 'content'],
                         'query' => $query,
                         'fuzziness' => 'AUTO'
                     ]
@@ -43,9 +43,15 @@ class ElasticSearch
 
     public function buildCollection(array $items){
         $ids = Arr::pluck($items['hits']['hits'], '_id');
-        $idsOrdered = implode(',', $ids);
+        $posts = Post::find($ids)->keyBy('id');
+        $result = new Collection();
 
-        return Post::whereIn('id', $ids)->orderByRaw('FIELD(id,'.$idsOrdered.')');
+        foreach ($ids as $id) {
+            if ($posts->has($id)) {
+                $result->push($posts->get($id));
+            }
+        }
 
+        return $result;
     }
 }

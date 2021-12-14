@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function index(Request $request, ElasticSearch $elasticSearch)
     {
-        $posts = $elasticSearch->search($request->get('q'))->get();
+        $posts = $elasticSearch->search($request->get('q'));
 
         return view('show_result', compact('posts'));
     }

@@ -19,6 +19,3 @@ Route::get('/', function () {
 });
 
 Route::post('/search', [SearchController::class, 'index'])->name('search');
-Route::get('/show', function () {
-    return view('show_result');
-});
