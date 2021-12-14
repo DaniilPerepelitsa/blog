@@ -30,4 +30,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'search' => [
+        'index' => 'posts',
+        'hosts' => [
+            'http://localhost:9200',
+        ]
+    ]
+
 ];

@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class PostSeeder extends Seeder
 {
@@ -29,6 +28,10 @@ class PostSeeder extends Seeder
             [
                 'title' => 'Ram partners with Lucchese on a range of luxury boots',
                 'content' => "A few months ago, Ram announced a partnership with Michigan-based Wolverine boots on a range of work boots based on the Ram 1500 Tradesman, Rebel, and Limited trims. The number two full-size truckmaker so far this year in sales isn't finished with footwear, Ram announcing a range of dress boots in collaboration with Texas-based boot company Lucchese. There are five styles in total, three for men, two for women. Since these Western-themed cowboy specials are based on the $58,565 10th Anniversary Limited Longhorn Edition, which lives at the opposite end of the trim range to Tradesman, the Lucchese models can cost more than 10 times the Wolverines. Whereas the entry-level Wolverine Tradesman cost $229, the top-dog Lucchese men's Tooled Western Boot runs $2,495."
+            ],
+            [
+                'title' => 'Best qualities Lucchese on a range Beginner equipment',
+                'content' => "The field equipment needed varies depending on how your aircraft is powered. The list below shows what's typically needed to fly a glow engine"
             ]
         ];
 
@@ -44,7 +47,11 @@ class PostSeeder extends Seeder
             [
                 'title' => 'E-flite® Twin Otter 1.2m PNP & BNF Basic Airplane (includes floats)',
                 'content' => "E-flite® Twin Otter 1.2m PNP & BNF Basic Buying Guides"
-            ]
+            ],
+            [
+                'title' => 'E-flite® Otter PNP & BNF Basic includes floats',
+                'content' => "E-flite® Twin Otter 1.2m PNP & BNF Basic Buying Guides"
+            ],
         ];
 
         foreach ($carPosts as $key => $data) {
