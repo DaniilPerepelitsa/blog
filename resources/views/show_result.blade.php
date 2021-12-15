@@ -1,11 +1,8 @@
 <body>
 
 <main role="main">
-
     <div class="album py-5 bg-light">
         <div class="container">
-
-
             <div class="row" style="width: 50%; padding-left: 25%; padding-top: 50px">
                 @forelse($posts as $post)
                     <div class="col-md-4">
@@ -25,9 +22,7 @@
             </div>
         </div>
     </div>
-
 </main>
-
 
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
