@@ -29,7 +29,6 @@ class ReindexPost extends Command
         }catch (\Exception $e){}
 
         $this->elasticsearch->indices()->create($this->settings());
-//        dd($response);
 
         foreach (Post::cursor() as $post){
             $this->elasticsearch->index([
